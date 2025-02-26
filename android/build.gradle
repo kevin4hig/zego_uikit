@@ -1,0 +1,50 @@
+group 'com.zegocloud.uikit.zego_uikit_plugin'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+
+        maven { url 'https://storage.zego.im/maven' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+
+        maven { url 'https://storage.zego.im/maven' }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.zegocloud.uikit.zego_uikit_plugin'
+    }
+
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+}
+
+dependencies {
+    implementation("im.zego:uikitreport:0.3.5")
+    implementation("com.google.code.gson:gson:2.10.1")
+}
