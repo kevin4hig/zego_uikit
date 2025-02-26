@@ -853,6 +853,7 @@ mixin ZegoSignalingPluginCoreAdvanceInvitationData {
   void onIncomingAdvanceInvitationReceived(
     ZegoSignalingPluginIncomingInvitationReceivedEvent event,
   ) {
+    return;
     ZegoLoggerService.logInfo(
       'onIncomingInvitationReceived, event:$event',
       tag: 'uikit-plugin-signaling',

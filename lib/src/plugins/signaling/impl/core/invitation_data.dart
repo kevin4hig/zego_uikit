@@ -454,6 +454,7 @@ mixin ZegoSignalingPluginCoreInvitationData {
   void onIncomingInvitationReceived(
     ZegoSignalingPluginIncomingInvitationReceivedEvent event,
   ) {
+    return;
     ZegoLoggerService.logInfo(
       'onIncomingInvitationReceived, $event',
       tag: 'uikit-plugin-signaling',
